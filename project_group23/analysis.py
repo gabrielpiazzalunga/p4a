@@ -6,11 +6,8 @@ def load_postings(engine) -> pd.DataFrame:
     """Load the postings_with_benefits staging table from the course database.
     Parses listed_time from Unix milliseconds to UTC datetime.
     """
-    try:
-        df = pd.read_sql("SELECT * FROM a20254350.postings_with_benefits", engine)
-    except Exception:
-        df = pd.read_sql("SELECT * FROM postings_with_benefits", engine)
-    
+    df = pd.read_sql("SELECT * FROM a20254350.postings_with_benefits", engine)
+
     if 'listed_time' in df.columns:
         if pd.api.types.is_numeric_dtype(df['listed_time']):
             df['listed_time'] = pd.to_datetime(df['listed_time'], unit='ms', utc=True)
@@ -20,12 +17,9 @@ def load_postings(engine) -> pd.DataFrame:
 
 def filter_fulltime(df: pd.DataFrame) -> pd.DataFrame:
     """Filter to full-time postings. Returns a copy."""
-    if 'formatted_work_type' in df.columns:
-        return df[df['formatted_work_type'] == 'Full-time'].copy()
-    elif 'work_type' in df.columns:
-        return df[df['work_type'] == 'FULL_TIME'].copy()
-    return df.copy()
+    return df[df['formatted_work_type'] == 'Full-time'].copy()
 
+## SESSION 3 - DOUBLE CHECK REQUIRED##
 def company_summary(engine) -> pd.DataFrame:
     """Load the companies_companies table, filter to US companies."""
     df_companies = pd.read_sql("SELECT * FROM companies_companies", engine)
@@ -36,13 +30,13 @@ def company_summary(engine) -> pd.DataFrame:
 
 def top_industries(df_postings, df_job_industries, df_industries, n: int) -> pd.DataFrame:
     """Return the top N industries by posting count using DuckDB."""
-    query = """
+    query = f"""
     SELECT mi.industry_name, COUNT(p.job_id) AS posting_count
     FROM df_postings p
     JOIN df_job_industries ji ON p.job_id = ji.job_id
     JOIN df_industries mi ON ji.industry_id = mi.industry_id
     GROUP BY mi.industry_name
     ORDER BY posting_count DESC
-    LIMIT :n
+    LIMIT {n}
     """
-    return duckdb.query(query).to_df()
+    return duckdb.sql(query).df()

@@ -1,0 +1,44 @@
+{
+    "top_countries": [
+        {
+            "country": "US",
+            "count": 28412
+        },
+        {
+            "country": "GB",
+            "count": 3514
+        },
+        {
+            "country": "CA",
+            "count": 1925
+        },
+        {
+            "country": "IN",
+            "count": 1684
+        },
+        {
+            "country": "AU",
+            "count": 1102
+        },
+        {
+            "country": "DE",
+            "count": 912
+        },
+        {
+            "country": "FR",
+            "count": 845
+        },
+        {
+            "country": "SG",
+            "count": 612
+        },
+        {
+            "country": "BR",
+            "count": 574
+        },
+        {
+            "country": "NL",
+            "count": 491
+        }
+    ]
+}
