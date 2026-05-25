@@ -1,4 +1,4 @@
--- Active: 1769793205188@@3de0dac0-8513-4220-9ee7-414dc040c138.bn2a2uid0up8mv7mv2ig.databases.appdomain.cloud@31131@linkedin_jobs
+-- Active: 1779702172225@@3de0dac0-8513-4220-9ee7-414dc040c138.bn2a2uid0up8mv7mv2ig.databases.appdomain.cloud@31131@linkedin_jobs
 --session 1 e 2
 -- select *
 -- from linkedin_jobs.postings post
@@ -15,7 +15,7 @@
 create table a20254350.postings_with_benefits as
 select post.*, ben.job_benefits as benefits
 from postings post
-    inner join (
+    left join (
         select ben.job_id, GROUP_CONCAT(ben.type SEPARATOR '; ') as job_benefits
         from jobs_benefits ben
         group by

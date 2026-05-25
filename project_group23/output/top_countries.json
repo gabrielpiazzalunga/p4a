@@ -2,43 +2,43 @@
     "top_countries": [
         {
             "country": "US",
-            "count": 28412
+            "count": 21635
+        },
+        {
+            "country": "0",
+            "count": 727
         },
         {
             "country": "GB",
-            "count": 3514
+            "count": 620
         },
         {
             "country": "CA",
-            "count": 1925
+            "count": 258
         },
         {
             "country": "IN",
-            "count": 1684
-        },
-        {
-            "country": "AU",
-            "count": 1102
+            "count": 157
         },
         {
             "country": "DE",
-            "count": 912
+            "count": 128
         },
         {
             "country": "FR",
-            "count": 845
+            "count": 118
         },
         {
-            "country": "SG",
-            "count": 612
+            "country": "CH",
+            "count": 93
         },
         {
-            "country": "BR",
-            "count": 574
+            "country": "AU",
+            "count": 73
         },
         {
             "country": "NL",
-            "count": 491
+            "count": 64
         }
     ]
 }

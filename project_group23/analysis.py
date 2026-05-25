@@ -19,7 +19,6 @@ def filter_fulltime(df: pd.DataFrame) -> pd.DataFrame:
     """Filter to full-time postings. Returns a copy."""
     return df[df['formatted_work_type'] == 'Full-time'].copy()
 
-## SESSION 3 - DOUBLE CHECK REQUIRED##
 def company_summary(engine) -> pd.DataFrame:
     """Load the companies_companies table, filter to US companies."""
     df_companies = pd.read_sql("SELECT * FROM companies_companies", engine)
