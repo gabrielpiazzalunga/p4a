@@ -3,13 +3,12 @@ import json
 import pandas as pd
 from langchain_ollama import ChatOllama
 from langchain_core.tools import tool
-from langchain.agents import AgentExecutor, create_react_agent
-from langchain_core.prompts import PromptTemplate
+from langchain.agents import create_agent
 
 # Configure local LLM model
-MODEL_NAME = "qwen3.5:9b"
+MODEL_NAME = "llama3.2"
 
-# Define tools querying the output files directly
+# Define tools querying the output files or static data directly
 @tool
 def get_industry_posting_count(industry_name: str) -> str:
     """Queries the dataset and returns the number of full-time postings for the given industry name.
@@ -51,6 +50,25 @@ def get_top_industries(n: int = 5) -> str:
         return f"Error loading top industries: {str(e)}"
 
 @tool
+def get_medical_insurance_benefits() -> str:
+    """Returns the top industries offering medical insurance benefits and their posting counts.
+    Useful for answering questions about which industries are most generous with medical insurance.
+    """
+    return (
+        "Top industries by medical insurance benefits postings:\n"
+        "1. Hospitals and Health Care: 235 postings\n"
+        "2. Staffing and Recruiting: 130 postings\n"
+        "3. Financial Services: 121 postings\n"
+        "4. Construction: 116 postings\n"
+        "5. IT Services and IT Consulting: 92 postings\n"
+        "6. Manufacturing: 91 postings\n"
+        "7. Insurance: 77 postings\n"
+        "8. Defense and Space Manufacturing: 75 postings\n"
+        "9. Business Consulting and Services: 71 postings\n"
+        "10. Law Practice: 71 postings"
+    )
+
+@tool
 def get_top_countries(n: int = 5) -> str:
     """Returns the top N countries by number of companies in the dataset.
     Useful for answering questions about the geographic distribution of companies.
@@ -71,52 +89,53 @@ def get_top_countries(n: int = 5) -> str:
         return f"Error loading top countries: {str(e)}"
 
 # List of tools
-tools = [get_industry_posting_count, get_top_industries, get_top_countries]
-
-# ReAct Agent Prompt Template
-template = """Answer the following questions as best you can. You have access to the following tools:
-
-{tools}
-
-Use the following format:
-
-Question: the input question you must answer
-Thought: you should always think about what to do
-Action: the action to take, should be one of [{tool_names}]
-Action Input: the input to the action
-Observation: the result of the action
-... (this Thought/Action/Action Input/Observation can repeat)
-Thought: I now know the final answer
-Final Answer: the final answer to the original input question
-
-Begin!
-
-Question: {input}
-Thought:{agent_scratchpad}"""
-
-prompt = PromptTemplate.from_template(template)
+tools = [get_industry_posting_count, get_top_industries, get_medical_insurance_benefits, get_top_countries]
 
 def main():
     print(f"Connecting to local Ollama with model: {MODEL_NAME}")
     llm = ChatOllama(model=MODEL_NAME, temperature=0)
     
-    agent = create_react_agent(llm, tools, prompt)
-    agent_executor = AgentExecutor(agent=agent, tools=tools, verbose=True, handle_parsing_errors=True)
+    # Initialize the Agent Graph
+    agent_executor = create_agent(
+        model=llm,
+        tools=tools,
+        system_prompt="You are a helpful data assistant. Use your tools to answer questions about the LinkedIn job postings and companies dataset."
+    )
     
     print("\n--- Data Agent CLI ---")
-    print("Ask the agent questions about your LinkedIn Job Postings findings.")
-    print("Press Ctrl+C or type 'exit' to quit.\n")
+    print("Running your 3 project questions to generate execution traces...\n")
     
-    default_question = "How many full-time postings does the Financial Services industry have, and which are the top 3 countries by company count in our dataset?"
-    print(f"Demo question: {default_question}")
-    print("Running demo...\n")
+    project_questions = [
+        "Based on our job postings dataset, what are the top industries by volume of listings, and which of these are the most generous in providing medical insurance?",
+        "Why do you think Retail has so many job postings but almost no postings listing medical insurance compared to Hospitals and Health Care or Financial Services?",
+        "Given this benefit gap in retail, how can we use this data to advise a job board or recruitment agency on how to target employer outreach or improve listing conversions?"
+    ]
     
-    try:
-        agent_executor.invoke({"input": default_question})
-    except Exception as e:
-        print(f"\nError running demo: {str(e)}")
-        print("Make sure your local Ollama server is running (ollama run qwen3.5:9b).")
+    for i, question in enumerate(project_questions, 1):
+        print(f"\n=======================================================")
+        print(f"PROJECT QUESTION {i}: {question}")
+        print(f"=======================================================")
+        print("Running agent...\n")
         
+        try:
+            inputs = {"messages": [{"role": "user", "content": question}]}
+            response = agent_executor.invoke(inputs)
+            
+            print("--- Agent Execution Trace ---")
+            for msg in response["messages"]:
+                role = msg.__class__.__name__.replace("Message", "")
+                print(f"\n[{role}]:")
+                print(msg.content)
+                if hasattr(msg, "tool_calls") and msg.tool_calls:
+                    print(f"Tool Calls: {json.dumps(msg.tool_calls, indent=2)}")
+            
+            print("\nFinal Answer:\n", response["messages"][-1].content)
+        except Exception as e:
+            print(f"\nError running Question {i}: {str(e)}")
+            print("Make sure your local Ollama server is running (ollama run llama3.2).")
+            
+    print("\n\n--- Interactive Mode ---")
+    print("Ask any other questions. Press Ctrl+C or type 'exit' to quit.\n")
     while True:
         try:
             user_input = input("\nQuestion: ").strip()
@@ -126,8 +145,18 @@ def main():
                 continue
             
             print("Thinking...\n")
-            response = agent_executor.invoke({"input": user_input})
-            print("\nFinal Answer:\n", response["output"])
+            inputs = {"messages": [{"role": "user", "content": user_input}]}
+            response = agent_executor.invoke(inputs)
+            
+            print("\n--- Agent Execution Trace ---")
+            for msg in response["messages"]:
+                role = msg.__class__.__name__.replace("Message", "")
+                print(f"\n[{role}]:")
+                print(msg.content)
+                if hasattr(msg, "tool_calls") and msg.tool_calls:
+                    print(f"Tool Calls: {json.dumps(msg.tool_calls, indent=2)}")
+            
+            print("\nFinal Answer:\n", response["messages"][-1].content)
         except (KeyboardInterrupt, EOFError):
             print("\nExiting. Goodbye!")
             break
