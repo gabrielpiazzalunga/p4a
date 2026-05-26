@@ -38,8 +38,8 @@ Retail Apparel and Fashion,275
 Wholesale Building Materials,270
 Aviation and Aerospace Component Manufacturing,268
 Truck Transportation,267
-Environmental Services,263
 Medical Practices,263
+Environmental Services,263
 Wellness and Fitness Services,262
 Utilities,262
 Oil and Gas,262
@@ -56,8 +56,8 @@ Research Services,171
 "Technology, Information and Media",165
 Facilities Services,160
 Machinery Manufacturing,156
-Information Services,154
 Individual and Family Services,154
+Information Services,154
 Business Content,153
 Architecture and Planning,150
 Packaging and Containers Manufacturing,140
@@ -80,18 +80,18 @@ Health and Human Services,79
 Venture Capital and Private Equity Principals,76
 Services for Renewable Energy,73
 Internet Marketplace Platforms,73
-Broadcast Media Production and Distribution,64
 Travel Arrangements,64
 Education Management,64
+Broadcast Media Production and Distribution,64
 Information Technology & Services,63
 Public Relations and Communications Services,61
 Education,57
-Retail Luxury Goods and Jewelry,52
 Retail Office Equipment,52
+Retail Luxury Goods and Jewelry,52
 Mining,51
 Spectator Sports,49
-Capital Markets,48
 Retail Groceries,48
+Capital Markets,48
 Building Construction,46
 Book and Periodical Publishing,45
 Non-profit Organization Management,44
@@ -99,256 +99,3 @@ Events Services,44
 Plastics Manufacturing,43
 Textile Manufacturing,42
 Media Production,42
-E-Learning Providers,41
-Furniture and Home Furnishings Manufacturing,41
-Freight and Package Transportation,40
-Leasing Non-residential Real Estate,39
-Paper and Forest Product Manufacturing,38
-Warehousing and Storage,36
-Administrative and Support Services,36
-Printing Services,36
-Wireless Services,35
-Electric Power Generation,35
-Human Resources,35
-Outsourcing and Offshoring Consulting,35
-Retail Pharmacies,34
-Gambling Facilities and Casinos,34
-Sporting Goods Manufacturing,34
-Computer Games,33
-Civic and Social Organizations,33
-Government Relations Services,32
-Law Enforcement,32
-IT System Custom Software Development,31
-Public Health,30
-Armed Forces,29
-,28
-"Electric Power Transmission, Control, and Distribution",28
-Farming,28
-Automotive,26
-Retail Health and Personal Care Products,25
-Market Research,25
-Transportation/Trucking/Railroad,25
-Insurance Agencies and Brokerages,25
-Computer Networking Products,24
-Apparel & Fashion,24
-Beverage Manufacturing,24
-Food and Beverage Retail,23
-Retail Building Materials and Garden Equipment,22
-Engines and Power Transmission Equipment Manufacturing,21
-Electrical Equipment Manufacturing,21
-Online Audio and Video Media,19
-Military and International Affairs,19
-Consumer Goods,18
-International Trade and Development,17
-Office Administration,17
-"Health, Wellness & Fitness",17
-Internet Publishing,17
-"Museums, Historical Sites, and Zoos",16
-Retail Motor Vehicles,16
-"Agriculture, Construction, Mining Machinery Manufacturing",16
-Hotels and Motels,15
-Executive Offices,15
-Professional Training and Coaching,15
-Repair and Maintenance,15
-Food Production,15
-Data Security Software Products,15
-Musicians,14
-Data Infrastructure and Analytics,14
-Space Research and Technology,14
-Renewable Energy Power Generation,14
-Religious Institutions,14
-Biotechnology,14
-"Paint, Coating, and Adhesive Manufacturing",13
-Maritime Transportation,13
-Renewables & Environment,13
-Fabricated Metal Products,13
-Home Health Care Services,12
-IT System Data Services,12
-Medical Device,12
-Philanthropic Fundraising Services,12
-Hospitals,12
-HVAC and Refrigeration Equipment Manufacturing,12
-Robotics Engineering,11
-Shipbuilding,11
-Alternative Medicine,11
-Primary Metal Manufacturing,11
-International Affairs,11
-Building Materials,10
-Wholesale Import and Export,10
-Motor Vehicle Parts Manufacturing,10
-Dairy Product Manufacturing,10
-Interior Design,10
-Golf Courses and Country Clubs,10
-Specialty Trade Contractors,9
-Insurance and Employee Benefit Funds,9
-Defense & Space,9
-Investment Advice,9
-Entertainment,9
-Tobacco Manufacturing,9
-IT System Operations and Maintenance,9
-Performing Arts,9
-Food & Beverages,8
-"Oil, Gas, and Mining",8
-Renewable Energy Equipment Manufacturing,8
-Strategic Management Services,8
-Translation and Localization,8
-Agricultural Chemical Manufacturing,8
-Community Development and Urban Planning,8
-IT System Testing and Evaluation,8
-Railroad Equipment Manufacturing,8
-School and Employee Bus Services,8
-"Movies, Videos, and Sound",7
-Public Policy Offices,7
-Nanotechnology Research,7
-Fundraising,7
-"Glass, Ceramics and Concrete Manufacturing",7
-Wholesale Food and Beverage,6
-Consumer Electronics,6
-Ground Passenger Transportation,6
-Commercial and Service Industry Machinery Manufacturing,6
-Fire Protection,6
-Retail Furniture and Home Furnishings,6
-Administration of Justice,6
-Insurance Carriers,6
-Security Systems Services,6
-Luxury Goods & Jewelry,6
-Recreational Facilities,6
-Telephone Call Centers,5
-Natural Gas Distribution,5
-Solar Electric Power Generation,5
-Research,5
-Metalworking Machinery Manufacturing,5
-Chemical Raw Materials Manufacturing,5
-Political Organizations,5
-Nursing Homes and Residential Care Facilities,5
-Wholesale Metals and Minerals,5
-Newspaper Publishing,5
-Holding Companies,5
-Rail Transportation,5
-Mechanical Or Industrial Engineering,5
-Apparel Manufacturing,5
-"Physical, Occupational and Speech Therapists",5
-Sports Teams and Clubs,4
-Wood Product Manufacturing,4
-"Wholesale Hardware, Plumbing, Heating Equipment",4
-Climate Technology Product Manufacturing,4
-Utilities Administration,4
-Semiconductors,4
-Courts of Law,4
-Writing and Editing,4
-Alternative Dispute Resolution,4
-"Air, Water, and Waste Program Management",4
-Aviation & Aerospace,4
-Rubber Products Manufacturing,4
-Housing and Community Development,4
-Surveying and Mapping Services,4
-Operations Consulting,4
-Cosmetics,4
-Think Tanks,4
-Community Services,4
-"Claims Adjusting, Actuarial Services",4
-Consumer Goods Rental,4
-Computer Networking,4
-Conservation Programs,3
-Wine & Spirits,3
-Retail Office Supplies and Gifts,3
-Sugar and Confectionery Product Manufacturing,3
-"Farming, Ranching, Forestry",3
-Transportation Programs,3
-E-learning,3
-"Retail Appliances, Electrical, and Electronic Equipment",3
-Industrial Automation,3
-Design,3
-Vehicle Repair and Maintenance,3
-Meat Products Manufacturing,3
-Graphic Design,3
-Sports and Recreation Instruction,3
-IT System Training and Support,3
-Social Networking Platforms,3
-Architectural and Structural Metal Manufacturing,3
-Executive Search Services,3
-Equipment Rental Services,3
-IT System Installation and Disposal,3
-Correctional Institutions,3
-Online and Mail Order Retail,3
-IT System Design Services,3
-Wholesale Alcoholic Beverages,3
-Paper & Forest Products,2
-Commercial and Industrial Equipment Rental,2
-Commercial Real Estate,2
-Environmental Quality Programs,2
-Economic Programs,2
-Business Intelligence Platforms,2
-Wholesale Apparel and Sewing Supplies,2
-Blockchain Services,2
-Wholesale Motor Vehicles and Parts,2
-Glass Product Manufacturing,2
-Trusts and Estates,2
-Wholesale Paper Products,2
-Museums,2
-"Wholesale Appliances, Electrical, and Electronics",2
-Wholesale Computer Equipment,2
-Wholesale Chemical and Allied Products,2
-Landscaping Services,2
-Spring and Wire Product Manufacturing,2
-Animal Feed Manufacturing,2
-Forestry and Logging,2
-Construction Hardware Manufacturing,2
-Wind Electric Power Generation,2
-Magnetic and Optical Media Manufacturing,2
-Accommodation and Food Services,2
-Mattress and Blinds Manufacturing,2
-Artists and Writers,2
-Residential Building Construction,2
-Legislative Offices,2
-Fine Art,2
-Computer Hardware,2
-Wineries,2
-Climate Data and Analytics,2
-Plastics and Rubber Product Manufacturing,2
-Real Estate and Equipment Rental Services,2
-Measuring and Control Instrument Manufacturing,2
-Fisheries,1
-Dairy,1
-Personal and Laundry Services,1
-Furniture,1
-"Leisure, Travel & Tourism",1
-Wholesale Recyclable Materials,1
-Digital Accessibility Services,1
-Utility System Construction,1
-Housing Programs,1
-Libraries,1
-Pipeline Transportation,1
-Wholesale Machinery,1
-Fashion Accessories Manufacturing,1
-Internet News,1
-Performing Arts and Spectator Sports,1
-Alternative Fuel Vehicle Manufacturing,1
-Robot Manufacturing,1
-Zoos and Botanical Gardens,1
-Household Services,1
-Technical and Vocational Training,1
-Seafood Product Manufacturing,1
-"Bed-and-Breakfasts, Hostels, Homestays",1
-Real Estate Agents and Brokers,1
-Nonresidential Building Construction,1
-Audio and Video Equipment Manufacturing,1
-"Metal Valve, Ball, and Roller Manufacturing",1
-Wholesale Furniture and Home Furnishings,1
-Online Media,1
-Wholesale Raw Farm Products,1
-Pension Funds,1
-Office Furniture and Fixtures Manufacturing,1
-Oil and Coal Product Manufacturing,1
-Retail Books and Printed News,1
-Janitorial Services,1
-Soap and Cleaning Product Manufacturing,1
-Communications Equipment Manufacturing,1
-Warehousing,1
-"Water, Waste, Steam, and Air Conditioning Services",1
-Photography,1
-Wholesale Petroleum and Petroleum Products,1
-Horticulture,1
-Veterinary,1
-Metal Treatments,1
-Dentists,1

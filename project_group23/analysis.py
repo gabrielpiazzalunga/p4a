@@ -30,7 +30,7 @@ def company_summary(engine) -> pd.DataFrame:
 def top_industries(df_postings, df_job_industries, df_industries, n: int) -> pd.DataFrame:
     """Return the top N industries by posting count using DuckDB."""
     query = f"""
-    SELECT mi.industry_name, COUNT(p.job_id) AS posting_count
+    SELECT mi.industry_name, COUNT(DISTINCT p.job_id) AS posting_count
     FROM df_postings p
     JOIN df_job_industries ji ON p.job_id = ji.job_id
     JOIN df_industries mi ON ji.industry_id = mi.industry_id
